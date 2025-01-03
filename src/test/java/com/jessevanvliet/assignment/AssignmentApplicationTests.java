@@ -42,11 +42,10 @@ class AssignmentApplicationTests {
 				"Geography",
 				"easy"
 		);
-		when(triviaService.getQuestions()).thenReturn(List.of(mockQuestion)); // Mock service response
+		// Mock service response
+		when(triviaService.getQuestions()).thenReturn(List.of(mockQuestion));
 
 		List<QuestionResponse> response = triviaController.getQuestions();
-
-		//System.out.println("Response: " + response); // Debug log
 
 		assertNotNull(response);
 		assertEquals(1, response.size());
@@ -62,12 +61,11 @@ class AssignmentApplicationTests {
 				"success", true,
 				"error", ""
 		);
+		// Mock service response
 		when(triviaService.checkAnswer("1", "Paris"))
-				.thenReturn(ResponseEntity.ok(mockResponse)); // Mock service response
+				.thenReturn(ResponseEntity.ok(mockResponse));
 
 		ResponseEntity<Map<String, Object>> response = triviaController.checkAnswer("1", "Paris");
-
-		//System.out.println("Response: " + response.getBody()); // Debug log
 
 		assertNotNull(response);
 		assertTrue((Boolean) response.getBody().get("success")); // Success should be true
@@ -83,12 +81,11 @@ class AssignmentApplicationTests {
 				"success", false,
 				"error", "Incorrect answer."
 		);
+		// Mock service response
 		when(triviaService.checkAnswer("1", "London"))
-				.thenReturn(ResponseEntity.ok(mockResponse)); // Mock service response
+				.thenReturn(ResponseEntity.ok(mockResponse));
 
 		ResponseEntity<Map<String, Object>> response = triviaController.checkAnswer("1", "London");
-
-		//System.out.println("Response: " + response.getBody()); // Debug log
 
 		assertNotNull(response);
 		assertFalse((Boolean) response.getBody().get("success")); // Success should be false
