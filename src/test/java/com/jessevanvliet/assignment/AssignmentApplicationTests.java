@@ -26,12 +26,13 @@ class AssignmentApplicationTests {
 	@InjectMocks
 	private TriviaController triviaController;
 
+	// 1 - Initial Loading
 	@Test
 	void contextLoads() {
 		assertTrue(true);
 	}
 
-	// Get Questions
+	// 2 - Question - Get Questions
 	@Test
 	void getQuestions_ShouldReturnListOfQuestions() {
 		QuestionResponse mockQuestion = new QuestionResponse(
@@ -54,7 +55,7 @@ class AssignmentApplicationTests {
 		verify(triviaService, times(1)).getQuestions();
 	}
 
-	// Check Correct Answer
+	// 3 - Answer - Check Correct Answer
 	@Test
 	void checkAnswer_ShouldReturnSuccess_WhenAnswerIsCorrect() {
 		Map<String, Object> mockResponse = Map.of(
@@ -75,7 +76,7 @@ class AssignmentApplicationTests {
 		verify(triviaService, times(1)).checkAnswer("1", "Paris");
 	}
 
-	// Check Wrong Answer
+	// 4 - Answer - Check Wrong Answer
 	@Test
 	void checkAnswer_ShouldReturnFailure_WhenAnswerIsWrong() {
 		Map<String, Object> mockResponse = Map.of(
@@ -96,7 +97,7 @@ class AssignmentApplicationTests {
 		verify(triviaService, times(1)).checkAnswer("1", "London");
 	}
 
-	// Check Answer Correct
+	// 5 - Test Service - Check Answer Correct
 	@Test
 	void checkAnswer_ServiceShouldReturnTrue_WhenAnswerIsCorrect() {
 		TriviaService triviaService = new TriviaService();
@@ -136,7 +137,7 @@ class AssignmentApplicationTests {
 		assertEquals("Incorrect answer.", result.getBody().get("error")); // Error should match
 	}
 
-	// Check Invalid ID
+	// 7 - Test Service - Check Invalid ID
 	@Test
 	void checkAnswer_ServiceShouldReturnFalse_WhenQuestionIdIsInvalid() {
 		TriviaService triviaService = new TriviaService(); // Use actual service
