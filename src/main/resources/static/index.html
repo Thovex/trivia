@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+    <h1>Trivia Game</h1>
+    <div id="points">Points: 0</div>
+    <div id="timer">Time Left: 10s</div>
+    <div id="question-container">
+        <p id="question">Loading question...</p>
+        <div id="answers"></div>
+    </div>
+    <div id="result"></div>
+    <button id="next-button" onclick="fetchQuestion()">Next Question</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
