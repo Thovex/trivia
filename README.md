@@ -7,8 +7,8 @@
 
 # Ensured
 
-No JSON 'Correct Answer' coming back to the User (`F12 -> Network Tab`) 
-Some Unit Testing is done using the Framework provided
+- No JSON 'Correct Answer' coming back to the User (`F12 -> Network Tab`) 
+- Some Unit Testing is done using the Framework provided
 
 # Special Thanks
 
