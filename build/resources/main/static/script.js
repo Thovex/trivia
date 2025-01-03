@@ -31,7 +31,7 @@ function startTimer() {
 
         if (timeLeft <= 0) {
             clearInterval(timer);
-            handleTimeout(); // Handle timeout scenario
+            handleTimeout();
         }
 
         timeLeft--;
@@ -59,8 +59,8 @@ async function fetchQuestion() {
         const timerDisplay = document.getElementById("timer");
         timerDisplay.innerText = `Time Left: ${timeLeft}s`;
 
-        answered = false; // Reset answer status
-        isPenalized = false; // Reset penalty status for the new question
+        answered = false;
+        isPenalized = false;
 
         const response = await fetch(`${API_BASE_URL}/questions`);
         if (!response.ok) {

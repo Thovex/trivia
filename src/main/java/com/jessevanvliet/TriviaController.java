@@ -1,11 +1,12 @@
 package com.jessevanvliet;
 
+import com.jessevanvliet.data.QuestionResponse;
+
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.jessevanvliet.data.QuestionResponse;
 
 @RestController
 @RequestMapping("/api")
