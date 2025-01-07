@@ -26,6 +26,8 @@ class AssignmentApplicationTests {
 	@InjectMocks
 	private TriviaController triviaController;
 
+	// Note. Copilot is used during development: these "Boilerplate" answers are generated
+
 	// 1 - Initial Loading
 	@Test
 	void contextLoads() {
